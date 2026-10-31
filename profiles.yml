@@ -1,0 +1,6 @@
+github_pipeline_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: data/github.duckdb
