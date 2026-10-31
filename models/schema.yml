@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_github_prs
+    description: "Cleaned raw GitHub pull requests."
+    columns:
+      - name: pr_id
+        description: "Unique GitHub pull request ID."
+        tests:
+          - unique
+          - not_null
+      - name: author_username
+        tests:
+          - not_null
+
+  - name: int_github_pr_metrics
+    description: "Intermediate model calculating pull request lifecycle hours."
+    columns:
+      - name: pr_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_github_pr_summary
+    description: "Author-level rollups of pull request volume and resolution rates."
+    columns:
+      - name: author_username
+        tests:
+          - unique
+          - not_null
+      - name: total_prs
+        tests:
+          - not_null
