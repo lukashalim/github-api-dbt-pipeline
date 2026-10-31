@@ -31,7 +31,7 @@ jobs:
           python scripts/extract_github.py
 
       - name: Run dbt models
-        run: dbt run --target dev
+        run: dbt run --target dev --profiles-dir .
 
       - name: Run dbt tests
-        run: dbt test --target dev
+        run: dbt test --target dev --profiles-dir .
