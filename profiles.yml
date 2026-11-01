@@ -3,4 +3,4 @@ github_pipeline_dbt:
   outputs:
     dev:
       type: duckdb
-      path: data/github.duckdb
+      path: data/dev.duckdb
