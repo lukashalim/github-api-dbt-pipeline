@@ -1,5 +1,17 @@
+# DuckDB & SQLite database files
+*.duckdb
+*.duckdb.tmp
+*.db
+*.sqlite
 
+# Data directory contents (keep directory structure, ignore data files)
+data/*.duckdb
+data/*.csv
+data/*.parquet
+
+# dbt artifacts and logs
 target/
 dbt_packages/
 logs/
 .env
+
